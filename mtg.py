@@ -6,7 +6,7 @@ MTG Print Sheet Generator
 
 CLI usage:
     python mtg.py cards.csv
-    python mtg.py cards.csv --output my_print.pdf --column "Scryfall ID" --qty-column "Quantity"
+    python mtg.py cards.csv --output my_print.pdf --column "Types" --qty-column "Quantity"
 
 GUI usage:
     python mtg.py          (no arguments — opens the UI)
@@ -477,7 +477,7 @@ def run_gui():
         row=3, column=0, columnspan=3, sticky="ew", pady=12
     )
 
-    col_var = tk.StringVar(value="Scryfall ID")
+    col_var = tk.StringVar(value="Types")
     qty_var = tk.StringVar(value="Quantity")
     ttk.Label(gen_tab, text="Scryfall ID column:").grid(
         row=4, column=0, sticky="w", pady=4
@@ -681,7 +681,7 @@ def main():
     )
     parser.add_argument("csv_file", help="Path to your CSV file")
     parser.add_argument("--output", default="print_sheet.pdf")
-    parser.add_argument("--column", default="Scryfall ID")
+    parser.add_argument("--column", default="Types")
     parser.add_argument("--qty-column", default="Quantity")
     parser.add_argument("--cards-per-row", type=int, default=defaults.cards_per_row)
     parser.add_argument("--cards-per-col", type=int, default=defaults.cards_per_col)
