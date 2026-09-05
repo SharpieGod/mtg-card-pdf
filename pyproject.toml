@@ -1,0 +1,18 @@
+[project]
+name = "mtg"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "SharpieGod", email = "sabodarko09@gmail.com" }]
+requires-python = ">=3.14"
+dependencies = [
+    "reportlab>=5.0.1",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+mtg = "mtg:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
